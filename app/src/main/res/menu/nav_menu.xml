@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
+    <item
+        android:id="@+id/home"
+        android:title="Home"
+        android:icon="@drawable/home"/>
+
+    <item
+        android:id="@+id/map"
+        android:title="Map"
+        android:icon="@drawable/map"/>
+
+    <item
+        android:id="@+id/schedule"
+        android:title="Schedule"
+        android:icon="@drawable/calendar_month"/>
+
+    <item
+        android:id="@+id/bank"
+        android:title="Bank"
+        android:icon="@drawable/account_balance"/>
+
+    <item
+        android:id="@+id/registrar"
+        android:title="Registrar"
+        android:icon="@drawable/receipt_long"/>
 </menu>

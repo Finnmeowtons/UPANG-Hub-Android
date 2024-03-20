@@ -6,29 +6,22 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.activityViewModels
-import androidx.navigation.fragment.findNavController
-import com.soriano.christianjose.block6.p1.upanghub.adapter.AnnouncementsAdapter
-import com.soriano.christianjose.block6.p1.upanghub.databinding.FragmentHomeBinding
+import com.soriano.christianjose.block6.p1.upanghub.databinding.FragmentMapBinding
 import com.soriano.christianjose.block6.p1.upanghub.viewmodel.SharedViewModel
 
-class HomeFragment : Fragment() {
-    private var _binding: FragmentHomeBinding? = null
+class MapFragment : Fragment() {
+    private var _binding: FragmentMapBinding? = null
     private val binding get() = _binding!!
     private val sharedViewModel: SharedViewModel by activityViewModels()
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentHomeBinding.inflate(inflater, container, false)
+        _binding = FragmentMapBinding.inflate(inflater, container, false)
         val view = binding.root
-        sharedViewModel.updateAppBarTitle("Home")
-        val recyclerViewAdapter = AnnouncementsAdapter()
-        binding.rvAnnouncements.adapter = recyclerViewAdapter
+        sharedViewModel.updateAppBarTitle("Map")
 
-        binding.cvMap.setOnClickListener {
-            findNavController().navigate(R.id.action_homeFragment_to_mapFragment)
-        }
+
 
 
         return view
