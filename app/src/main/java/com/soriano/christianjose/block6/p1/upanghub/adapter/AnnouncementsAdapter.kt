@@ -3,17 +3,30 @@ package com.soriano.christianjose.block6.p1.upanghub.adapter
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.soriano.christianjose.block6.p1.upanghub.databinding.ItemAnnouncementsBinding
+import com.soriano.christianjose.block6.p1.upanghub.dataclass.AnnouncementLinks
 
 class AnnouncementsAdapter() : RecyclerView.Adapter<AnnouncementsViewHolder>() {
 
+    private val diffCallback = object : DiffUtil.ItemCallback<AnnouncementLinks>(){
+        override fun areItemsTheSame(oldItem: AnnouncementLinks, newItem: AnnouncementLinks): Boolean {
+            return oldItem.link == newItem.link
+        }
 
-    var announcements: List<String> = listOf(
-        "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fup.csdl%2Fposts%2Fpfbid0DHV4wQ9EDoNky9LxoLebP2WMWLeps1e1a862wwkugCBSzWdkTC9YR4z8xDvjUTvdl&show_text=true&width=300",
-        "https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fup.csdl%2Fposts%2Fpfbid02pAAVq2L2xiWKMTf2JGPtNc1danw9hyoTTbDWkDs4broHRhT6aDP3YxPTdgZMhJKxl&show_text=true&width=300"
-    )
+        override fun areContentsTheSame(oldItem: AnnouncementLinks, newItem: AnnouncementLinks): Boolean {
+            return oldItem == newItem
+        }
+
+    }
+
+    private val differ = AsyncListDiffer(this, diffCallback)
+
+    var announcements: List<AnnouncementLinks>
+        get() = differ.currentList
+        set(value) { differ.submitList(value) }
 
     val iframeTemplate = "<html>\n" +
             "<head>\n" +
@@ -42,7 +55,7 @@ class AnnouncementsAdapter() : RecyclerView.Adapter<AnnouncementsViewHolder>() {
         Log.d("AnnouncementsAdapter", "Post URL: $postUrl")
 
         if (holder.binding.webView.url == null) { // Check if content is already loaded
-            val htmlContent = iframeTemplate.replace("{POST_URL}", postUrl)
+            val htmlContent = iframeTemplate.replace("{POST_URL}", postUrl.link)
             holder.binding.webView.loadDataWithBaseURL(null, htmlContent, "text/html", "utf-8", null)
         }
     }

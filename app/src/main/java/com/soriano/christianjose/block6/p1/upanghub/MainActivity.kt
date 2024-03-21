@@ -1,6 +1,10 @@
 package com.soriano.christianjose.block6.p1.upanghub
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
+import android.widget.Toast
+import androidx.activity.addCallback
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -38,10 +42,11 @@ class MainActivity : AppCompatActivity() {
             when(menuItem.itemId){
                 R.id.home ->{
                     binding.topAppBar.title = "Home"
+                    navController.popBackStack()
                 }
                 R.id.map -> {
                     binding.topAppBar.title = "Map"
-                    navController.navigate(R.id.action_homeFragment_to_mapFragment)
+                    navController.navigate(R.id.action_map)
                 }
                 R.id.schedule -> {
                     binding.topAppBar.title = "Schedule"
@@ -55,6 +60,24 @@ class MainActivity : AppCompatActivity() {
             }
             binding.main.closeDrawers()
             true
+        }
+        onBackPressedDispatcher.addCallback(this){
+            if (navController.currentDestination?.id == R.id.homeFragment) { // Check if nasa home
+                if (onBackPressedDispatcher.hasEnabledCallbacks()) {
+                    Toast.makeText(this@MainActivity, "Press back again to exit", Toast.LENGTH_SHORT).show()
+                    isEnabled = false
+                    Handler(Looper.getMainLooper()).postDelayed({ isEnabled = true }, 2000) // Re-enable after 2 seconds
+                } else {
+                    finish()
+                }
+            } else {
+                when (navController.currentDestination?.id){
+                    R.id.mapFragment -> {
+                        navController.popBackStack()
+                    }
+
+                }
+            }
         }
     }
 }

@@ -4,16 +4,17 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/my_nav"
     app:startDestination="@id/homeFragment">
-
+    <action android:id="@+id/action_home"
+        app:destination="@id/homeFragment"
+        app:popUpTo="@id/my_nav"
+        app:popUpToInclusive="true"/>
+    <action android:id="@+id/action_map"
+        app:destination="@id/mapFragment"/>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.soriano.christianjose.block6.p1.upanghub.HomeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" >
-        <action
-            android:id="@+id/action_homeFragment_to_mapFragment"
-            app:destination="@id/mapFragment" />
-    </fragment>
+        tools:layout="@layout/fragment_home" />
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.soriano.christianjose.block6.p1.upanghub.MapFragment"
