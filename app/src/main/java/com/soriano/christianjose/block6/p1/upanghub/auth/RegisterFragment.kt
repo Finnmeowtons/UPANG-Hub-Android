@@ -6,6 +6,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.activity.addCallback
+import androidx.navigation.fragment.findNavController
 import com.google.android.material.dialog.MaterialAlertDialogBuilder
 import com.soriano.christianjose.block6.p1.upanghub.auth.api.ApiAuth
 import com.soriano.christianjose.block6.p1.upanghub.auth.dataclass.ApiAuthResponse
@@ -86,7 +88,11 @@ class RegisterFragment : Fragment() {
 
         }
 
-
+        requireActivity().onBackPressedDispatcher.addCallback(this){
+            if (isAdded) {
+                findNavController().popBackStack()
+            }
+        }
 
 
         return view
