@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="320dp"
+    android:layout_width="265dp"
     android:layout_height="220dp"
     app:cardBackgroundColor="@color/white">
 
@@ -10,33 +10,52 @@
         android:layout_width="250dp"
         android:layout_height="200dp"
         android:layout_marginStart="10dp"
-        android:background="@drawable/subject_button"
-        android:backgroundTint="#4DC591"
+        android:backgroundTint="#FF7648"
         android:layout_marginTop="10dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
+            <ImageView
+                android:layout_width="230dp"
+                android:layout_height="200dp"
+                android:layout_marginEnd="-8dp"
+                android:background="@drawable/design"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
                 android:layout_width="30dp"
                 android:layout_height="30dp"
                 android:layout_marginTop="20dp"
                 android:layout_marginEnd="15dp"
+                android:backgroundTint="@color/white"
                 android:background="@drawable/line"
                 app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="31dp"
+                android:layout_marginTop="110dp"
+                android:text="ITE308"
+                android:textColor="@color/white"
+                android:textSize="30dp"
+                app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="32dp"
-                android:layout_marginTop="128dp"
-                android:text="MAT-152"
-                android:textColor="@color/white"
-                android:textSize="30dp"
+                android:text="Francis Gonzales"
+                android:textColor="#D7FFFFFF"
+                android:textSize="15dp"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toBottomOf="@+id/textView14" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
