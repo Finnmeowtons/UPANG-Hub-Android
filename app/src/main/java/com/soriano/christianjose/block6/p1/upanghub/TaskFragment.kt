@@ -9,7 +9,7 @@ import androidx.fragment.app.activityViewModels
 import com.soriano.christianjose.block6.p1.upanghub.databinding.FragmentScheduleBinding
 import com.soriano.christianjose.block6.p1.upanghub.viewmodel.SharedViewModel
 
-class ScheduleFragment : Fragment() {
+class TaskFragment : Fragment() {
 
     private var _binding: FragmentScheduleBinding? = null
     private val binding get() = _binding!!

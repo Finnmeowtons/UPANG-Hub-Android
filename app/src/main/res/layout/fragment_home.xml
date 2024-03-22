@@ -6,32 +6,53 @@
     android:layout_height="match_parent"
     tools:context=".HomeFragment">
 
-
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:clipToPadding="false"
         android:paddingTop="32dp"
-        
+
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/settings"
+            android:layout_width="45dp"
+            android:layout_height="45dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/menu_fill0_wght400_grad0_opsz24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="17dp"
+            android:text="Home"
+            android:textSize="30dp"
+            app:layout_constraintStart_toEndOf="@+id/settings"
+            app:layout_constraintTop_toTopOf="parent" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="20dp"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            app:layout_constraintTop_toBottomOf="@+id/settings">
 
 
             <com.google.android.material.card.MaterialCardView
                 android:id="@+id/cvMap"
                 android:layout_width="150dp"
                 android:layout_height="165dp"
-
+                android:backgroundTint="#4DC591"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent">
 
@@ -47,6 +68,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:text="Map"
+                        android:textColor="@color/white"
+                        android:textSize="25dp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -56,6 +79,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="Find your way, locate parking, classrooms"
+                        android:textColor="#5E000000"
                         android:textSize="11sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -70,7 +94,7 @@
                 android:layout_width="150dp"
                 android:layout_height="100dp"
                 android:layout_marginTop="8dp"
-
+                android:backgroundTint="#4DC591"
                 app:layout_constraintStart_toStartOf="@+id/cvMap"
                 app:layout_constraintTop_toBottomOf="@+id/cvMap">
 
@@ -86,6 +110,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:text="Tasks"
+                        android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -94,6 +119,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="Stay organized with your to-do list!"
+                        android:textColor="#5E000000"
                         android:textSize="11sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView2" />
@@ -107,7 +133,7 @@
                 android:layout_width="150dp"
                 android:layout_height="107dp"
                 android:layout_marginStart="8dp"
-
+                android:backgroundTint="#4DC591"
                 app:layout_constraintStart_toEndOf="@+id/cvMap"
                 app:layout_constraintTop_toTopOf="@+id/cvMap">
 
@@ -123,6 +149,8 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:text="Schedule"
+
+                        android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -132,6 +160,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginEnd="8dp"
                         android:text="Check out your class timetable here!"
+                        android:textColor="#5E000000"
                         android:textSize="11sp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
@@ -147,7 +176,7 @@
                 android:layout_height="75dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-
+                android:backgroundTint="#4DC591"
                 app:layout_constraintStart_toEndOf="@+id/cvMap"
                 app:layout_constraintTop_toBottomOf="@+id/cvSchedule">
 
@@ -163,6 +192,7 @@
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:text="Registrar"
+                        android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -171,6 +201,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="Order documents easily"
+                        android:textColor="#5E000000"
                         android:textSize="11sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -185,7 +216,7 @@
                 android:layout_height="75dp"
                 android:layout_marginStart="8dp"
                 android:layout_marginTop="8dp"
-
+                android:backgroundTint="#4DC591"
                 app:layout_constraintStart_toEndOf="@+id/cvMap"
                 app:layout_constraintTop_toBottomOf="@+id/cvRegistrar">
 
@@ -197,10 +228,11 @@
                         android:id="@+id/textView4"
                         style="@style/TextAppearance.Material3.TitleMedium"
                         android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
+                        android:layout_height="19dp"
                         android:layout_marginStart="8dp"
                         android:layout_marginTop="8dp"
                         android:text="Bank"
+                        android:textColor="@color/white"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toTopOf="parent" />
 
@@ -209,6 +241,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="8dp"
                         android:text="Easily pay your tuition fees online"
+                        android:textColor="#5E000000"
                         android:textSize="11sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@+id/textView4" />
@@ -251,7 +284,6 @@
                 android:text="Cite" />
 
         </com.google.android.material.button.MaterialButtonToggleGroup>
-
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvAnnouncements"
